@@ -1,10 +1,15 @@
 const productosServices = require("../services/productosServices")
 
 
-const obtenerProductos = (req, res) => {
+const obtenerProductos = async (req, res) => {
 
-    // productosServices.obtenerProductos
-    res.send("Obteniendo el listado de productos")
+    try {
+        const productos = await productosServices.obtenerProductos()
+        res.json(productos)
+    } catch(err) {
+        throw err
+    }
+    
 }
 
 const obtenerProductoPorId = (req, res) => { //  "/productos/:id"

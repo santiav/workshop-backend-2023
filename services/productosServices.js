@@ -1,8 +1,10 @@
 // En los servicios manejamos complejidades (validaciones)
+const productosModels = require("../models/productosModels")
 
-const obtenerProductos = () => {
-    // const productos = toma del model la función de consulta a la DB
-    // return productos
+
+const obtenerProductos = async () => {
+    const productos = await productosModels.obtenerProductos()
+    return productos
 }
 
 const obtenerProductoPorId = () => { //  "/productos/:id"
