@@ -2,11 +2,12 @@
 const productosModels = require("../models/productosModels")
 
 
-const obtenerProductos = async () => {
-    const productos = await productosModels.obtenerProductos()
+const obtenerProductos = async (filtros) => {
+    const productos = await productosModels.obtenerProductos(filtros)
     return productos
 }
 
+// obtenerProductoPorId y así con los demás...
 const obtenerProductoPorId = () => { //  "/productos/:id"
     
 }
