@@ -1,7 +1,9 @@
-
+const productosServices = require("../services/productosServices")
 
 
 const obtenerProductos = (req, res) => {
+
+    // productosServices.obtenerProductos
     res.send("Obteniendo el listado de productos")
 }
 
