@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const db = require('./config/db')
+const productosRoutes = require('./routes/productosRoutes');
 
 // Obtener todos los productos 
 app.get('/', function (req, res) {
@@ -17,39 +18,16 @@ app.get('/', function (req, res) {
     `)
 })
 
-// ver todos los productos
-app.get("/productos/", (req, res) => {
-    res.send("Obteniendo el listado de productos")
-})
+app.use("/productos", productosRoutes)
 
-// Obtener un producto por su ID (ej vista de producto detallado)
-app.get("/productos/:id", (req, res) => {
-    const id = req.params.id
-    res.send("Obtener un producto por su ID " + id)
-})
-
-// Editar un producto (ej formulario prellenado para editar producto)
-app.get("/productos/editar/:id", (req, res) => {
-    const id = req.params.id
-    res.send("Enviando datos a la vista para prellenar formulario")
-})
-
-// Editar un producto enviando por formulario
-app.put("/productos/:id", (req, res) => {
-    const id = req.params.id
-    res.send("Editando el producto con ID " + id)
-})
-
-// Borrar un producto
-app.delete("/productos/:id", (req, res) => {
-    const id = req.params.id
-    res.send("Borrando el producto con ID " + id)
-})
-
-// Agregar un producto
-app.post("/productos/", (req, res) => {
-    res.send("Agregando producto a la DB")
-})
-
+// 404
+app.use(function (req, res, next) {
+    respuesta = {
+        error: true,
+        codigo: 404,
+        mensaje: 'URL no encontrada'
+    };
+    res.status(404).send(respuesta);
+});
 
 app.listen(3000, () => console.log("Servidor ONLINE"))
