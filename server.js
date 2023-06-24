@@ -1,7 +1,10 @@
 const express = require('express')
 const app = express()
-const db = require('./config/db')
 const productosRoutes = require('./routes/productosRoutes');
+
+// Middlewares
+app.use(express.urlencoded({extended:false}))
+app.use(express.json())
 
 // Obtener todos los productos 
 app.get('/', function (req, res) {
