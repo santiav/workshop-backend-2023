@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Listado de Productos</title>
+</head>
+
+<body>
+    <h1>Listado de Productos</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th>Descripción</th>
+                <th>Imagen</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% productos.forEach(function(producto) { %>
+                <tr>
+                    <td>
+                        <%= producto.nombre %>
+                    </td>
+                    <td>
+                        <%= producto.precio %>
+                    </td>
+                    <td>
+                        <%= producto.stock %>
+                    </td>
+                    <td>
+                        <%= producto.descripcion %>
+                    </td>
+                    <td><img src="<%= producto.imagen %>" alt="Imagen del producto"></td>
+                </tr>
+                <% }); %>
+        </tbody>
+    </table>
+</body>
+
+</html>
