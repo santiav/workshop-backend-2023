@@ -9,11 +9,11 @@ app.get('/', function (req, res) {
         <h1>Workshop de Backend</h1>
         <p>Se han creado los siguientes endpoints</p>
         <ul>
-            <li>GET <a href="">/productos</a></li>
-            <li>GET <a href="">/productos/:id</a></li>
-            <li>PUT <a href="">/productos/:id</a></li>
-            <li>DELETE <a href="">/productos/:id</a></li>
-            <li>POST <a href="">/productos/</a></li>
+            <li>GET <a href="./productos">/productos</a></li>
+            <li>GET <a href="./productos/1">/productos/:id</a></li>
+            <li>PUT <a href="">/productos/:id</a> (probar en insomnia)</li>
+            <li>DELETE <a href="">/productos/:id</a> (probar en insomnia)</li>
+            <li>POST <a href="">/productos/</a> (probar en insomnia)</li>
         </ul>
     `)
 })
